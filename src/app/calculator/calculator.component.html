@@ -1,0 +1,80 @@
+
+
+<h2>Calculator For K-Nearest Neighbor Algoritham</h2> &nbsp;&nbsp;
+
+<p>
+		<b><font size="+1">How To Use Calculator ?</font></b><br/><br/>
+		&nbsp; 1. <b>No. of Records</b> : Put the number of available records.<br/> 
+		&nbsp; 2. <b>Enter Records</b> : Fill the available Data. (To fill the Data click on <b>Add Row</b>)<br/>
+		&nbsp; 3. <B>Enter New Data Points</B> : Enter new Data points in record that to calculate.<br/>
+		&nbsp; 4. <b>Enter No. of K</b> : K is the number of neighbors that to be considered.<br/>
+
+
+	
+</p>
+
+
+<div class="box">
+<form [formGroup]="reactiveForm"  (ngSubmit)="onSubmit()">
+ 
+  
+  <b>No. of Records:</b>&nbsp;
+  <input class="input" type="number" formControlName="records"><br/><br/>
+  
+  
+  <h4>Enter Records:</h4>
+  
+  <div formArrayName="secretLairs">
+    <div *ngFor="let address of secretLairs.controls; let i=index" [formGroupName]="i" >
+      <!-- The repeated address template -->
+      
+          <label>X1:
+            <input class="form-control" type="number" formControlName="x1">
+          </label>&nbsp;
+        
+          <label>X2:
+            <input class="form-control" type="number" formControlName="x2">
+          </label>&nbsp;
+        
+          <label>Class(Good/Bad):
+			<input class="form-control" type="text" formControlName="y">
+          </label>
+        
+    </div><br/>
+    <!-- End of the repeated address template -->
+  
+      
+    <button (click)="addLair()" type="button">Add Row</button>
+      
+   
+  
+  </div> <br/>
+    
+    
+  <h4>Enter New Data Points:</h4>
+  
+  <label>X1:
+  <input class="input" type="number" formControlName="x1">
+</label>&nbsp;
+
+  <label>X2:
+  <input class="input" type="number" formControlName="x2"></label><br/><br/>
+  <br/>
+
+  <b>Enter No. of K:</b>&nbsp;
+  <input class="input" type="number" formControlName="k"><br/><br/>
+		
+
+  <button type="submit">Calculate</button>&nbsp;
+
+  <button type="reset">Reset</button>&nbsp;&nbsp;
+</form><br/>
+<div class="box1" >
+<B>Result:&nbsp; 
+<input type="text" style="font-weight: bold; color: #1A3C84; border: 2px solid #808080 " value="               {{result}}" readonly>
+</B>
+</div>
+</div>
+
+
+

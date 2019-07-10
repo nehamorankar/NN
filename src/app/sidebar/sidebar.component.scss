@@ -1,0 +1,26 @@
+nav {
+    background: rgb(20, 171, 177);
+    height: 100%;
+    width: fit-content;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+
+            a {
+                color: #fff;
+                padding: 20px;
+                display: block;
+            }
+            a:hover{ background-color:rgb(34, 152, 156);
+
+            }
+            .activated {
+                background-color: #1eb896;
+            }
+        }
+    }
+    
+}
